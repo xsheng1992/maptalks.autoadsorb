@@ -28,8 +28,8 @@ export class Autoadsorb extends maptalks.Class {
             const map = layer.map
             this._addTo(map)
             this.adsorblayer = layer
-            this.adsorblayer.on('addgeo', this._updateGeosSet, this)
-            this.adsorblayer.on('clear', this._resetGeosSet, this)
+            this.adsorblayer.on('addgeo', () => this._updateGeosSet(), this)
+            this.adsorblayer.on('clear', () => this._resetGeosSet(), this)
             this.bindDrawTool(map._map_tool)
         }
         return this
